@@ -82,7 +82,7 @@ get "/" do
   slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css)
 end
 
-post "/add" do
+post "/" do
   if user_exists?(client, params["github"])
     client.update_organization_membership(org_name, :user => params["github"])
     "OK, Check your EMAIL"

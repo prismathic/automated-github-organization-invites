@@ -6,17 +6,18 @@ html
     / link href="/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"
     link href="/css/app.css" rel="stylesheet" type="text/css"
     link href==background_css rel="stylesheet" type="text/css"
-    link rel="shortcut icon" href="/favicon.ico"
+    link rel="shortcut icon" href="/favicon.png"
   body
         div class="text-center"
           img{class="img-fluid" src=="/img/hng-image.png" alt="" width="300" height="189"
                 sizes="(max-width: 500px) 100vw, 500px"}
           p 
           | Get GitHub Invite To 
-          br =org_name
-          form class="invite-form" action="add" method="POST"
+          br 
+          strong =org_name
+          form class="invite-form" action="/" method="POST"
             label for="input_box" Please enter your GitHub username
             p
-              input class="user-email-input form-control" id="input_box" name="github"
+              input class="user-email-input form-control" id="input_box" name="github" placeholder="Github Username"
             p
               input.button class="btn btn-lg btn-success" type="submit" value="Send Invite!"
