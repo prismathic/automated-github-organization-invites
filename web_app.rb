@@ -79,14 +79,14 @@ l = Slim::Template.new { @layout }
 # ROUTES #
 
 get "/" do
-  slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => null)
+  slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css)
 end
 
 post "/" do
   if user_exists?(client, params["github"])
     client.update_organization_membership(org_name, :user => params["github"])
-    slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "Invite sent! Please check your mail.")
+    "Invite sent! Please Check your mail"
   else
-    slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "User not found! Ensure your spelling is right")
+    "User not found! Ensure your spelling is correct"
   end
 end
