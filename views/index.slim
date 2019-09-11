@@ -1,5 +1,8 @@
 doctype html
 html
+
+/ Credits: https://github.com/thundergolfer/automated-github-organization-invites
+
   head
     title HNG Tech Org Invite
     link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"
@@ -15,6 +18,11 @@ html
           | Get GitHub Invite To 
           br 
           strong =org_name
+
+          div class="alert" role="alert" id="alertBox"
+            strong =result
+
+
           form class="invite-form" action="/" method="POST"
             label for="input_box" Please enter your GitHub username
             p
