@@ -7,17 +7,16 @@ html
     link href="/css/app.css" rel="stylesheet" type="text/css"
     link href==background_css rel="stylesheet" type="text/css"
     link rel="shortcut icon" href="/favicon.ico"
-  body class="text-center"
-    div class="container container-table"
-      div class="row vertical-center-row"
-        div class="text-center col-md-4 col-md-offset-4"
+  body
+        div class="text-center"
           img{class="img-fluid" src=="/img/hng-image.png" alt="" width="300" height="189"
                 sizes="(max-width: 500px) 100vw, 500px"}
           p 
-          | Get GitHub Invite To =org_name
+          | Get GitHub Invite To 
+          br =org_name
           form class="invite-form" action="add" method="POST"
             label for="input_box" Please enter your GitHub username
             p
-              input.input_box class="user-email-input form-control" name="github"
+              input class="user-email-input form-control" id="input_box" name="github"
             p
               input.button class="btn btn-lg btn-success" type="submit" value="Send Invite!"
