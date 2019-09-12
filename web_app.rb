@@ -84,7 +84,7 @@ end
 
 post "/" do
   if user_exists?(client, params["github"])
-    if client.organization_member?(org_name, :user => params["github"])
+    if client.organization_member?(org_name, params["github"])
       slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "You are already a member of this organization!")  
     else
       client.update_organization_membership(org_name, :user => params["github"])
