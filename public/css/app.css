@@ -61,3 +61,11 @@ body {
 #not-found {
     height: 100vh;
 }
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

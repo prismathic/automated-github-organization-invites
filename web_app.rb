@@ -79,18 +79,18 @@ l = Slim::Template.new { @layout }
 # ROUTES #
 
 get "/" do
-  slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => nil)
+  slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => nil, :class => nil)
 end
 
 post "/" do
   if user_exists?(client, params["github"])
     if client.organization_member?(org_name, params["github"])
-      slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "You are already a member of this organization!")  
+      slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "You are already a member of this organization!", :class => "error")  
     else
       client.update_organization_membership(org_name, :user => params["github"])
-      slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "Invite sent! Please Check your mail")
+      slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "Invite sent! Please Check your mail", :class => "success")
     end
   else
-    slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "User not found! Ensure your spelling is correct")
+    slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "User not found! Ensure your spelling is correct", :class => "error")
   end
 end
