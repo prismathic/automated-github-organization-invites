@@ -89,6 +89,7 @@ post "/" do
     else
       client.update_organization_membership(org_name, :user => params["github"])
       slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "Invite sent! Please Check your mail")
+    end
   else
     slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "User not found! Ensure your spelling is correct")
   end
