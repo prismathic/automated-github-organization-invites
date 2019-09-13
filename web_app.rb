@@ -91,6 +91,6 @@ post "/" do
       slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "Invite sent! Please Check your mail", :class => "success")
     end
   else
-    slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "User not found! Ensure your spelling is correct", :class => "error")
+    slim l.render(Object.new, :avatar => avatar, :org_name => org_name, :background_css => background_css, :result => "User not found! Ensure you entered a valid username!", :class => "error")
   end
 end
